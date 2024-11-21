@@ -7,7 +7,7 @@ but manually doing it with hundreds of server is tiresome and hence the need for
 
 I would also like to tell about my journey of GSoC from my first interaction with Chris to this project ,let me start from project finding 
 
-# Organisation and project Search
+## Organisation and project Search
 2024 gsoc is not my first time application my first time was in 2022 in my first year of College, i was fascinated with newer Windows versions
 since my core duo intel i3 days as every new Windows versions used to
 bring new changes and features, from windows XP to Vista to 8.1 and then to 10 (cosmetic only) but was very heavy on my PC idle memmory uasge was upwards of 60% leaving very little room for exotic applications and games 
