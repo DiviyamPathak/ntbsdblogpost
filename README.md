@@ -20,4 +20,5 @@ community seemed lot more friendlier, responsive and active to help beginners. I
 
 Chritoph replied to my mail with positively and gave me a headstart explaining project details, I had problem with x86 qemu vm to start with NetBSD and he helped me graciously, investing his valuable time to help me boot with VM on debian machine. After exchanging some more mails we developed timeline and objective and submitted my propsal and fortunately it was accepted.
 
-## 
+## Project Details 
+root device and file system selection is made during later stages of boot process by kernel. config file defines candidates for device and kernel selects it given, some conditions meet criterion, you get head over to my docs for more details (here)[] . This functionality is handled primarily by setroot function in file kern_subr.c it also has specialised associated functions for different cases. Our task was to add tests in ATF for this function and some other functions that assists setroot.   
