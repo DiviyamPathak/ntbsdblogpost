@@ -15,5 +15,13 @@ Chritoph replied to my mail with positively and gave me a headstart explaining p
 root device and file system selection is made during later stages of boot process by kernel. config file defines candidates for device and kernel selects it given, some conditions meet
 criterion, you get head over to my docs for more details (here)[] . This functionality is handled primarily by setroot function in file kern_subr.c it also has specialised associated 
 functions for different cases. Our task was to add tests in ATF for this function and some other functions that assists setroot. This part of kernel works, and it works for over 30 year
-but code is rather complex to read and there is no documentaion, only way to debug is to read code. We will try to rewrite this code.
- 
+but code is rather complex to read and there is no documentaion, only way to debug is to read code. We will try to rewrite this code. 
+at any given stage when any condition fails the fallback option is to ask user for device. Thus this part of kernel rarely needs attention but Chris was having problems with RAIDframe 
+setup with higher capacity drives, this time too fallback option worked but in setup of hundreds of server this will be a problem. 
+
+there are some global function used in conditions inside setroot rootspec ,bootspec etc. these functions are either set through config file or through other machine dependent kernel 
+function findroot etc. we need to modify them in our testcases and also need to stub kernel functions used by setroot and other function. these testecases will eventually be ported to 
+use vnd. We check for global variables and if a local variable is to be checked we intialize it. 
+
+since root_device can also be a network device ,this has to be defined in config file, we alto test tftproot_dhcpboot function. this function can also set root_device.  
+
