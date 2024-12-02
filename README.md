@@ -13,7 +13,7 @@ Christoph replied to my mail positively. He gave me a head start explaining proj
 
 ## Project Details 
 Root device and file-system selection is made during later stages of boot process by kernel. Config file defines candidates for device and kernel selects it given, some conditions meet
-criterion, you get head over to my docs for more details (here)[]. This functionality is handled primarily by `setroot` function in file `kern_subr.c`. It also has specialised
+criterion, you get head over to my docs for more details [here](https://github.com/DiviyamPathak/Gsoc-2024-NetBSD). This functionality is handled primarily by `setroot` function in file `kern_subr.c`. It also has specialised
 functions for different cases. Our task was to add tests in ATF for this function and some other functions that assists setroot. This part of kernel works, and it works for over 30 years
 but code is rather complex to read and there is no documentation. The only way to understand it is to read code. We will try to rewrite this code. 
 At any given stage when any condition fails the fallback option is to ask user manually for device. Thus this part of kernel rarely needs attention but Chris was having problems with RAIDframe setup with higher capacity drives. This time too fallback option worked but manually intervention every time is a problem.
