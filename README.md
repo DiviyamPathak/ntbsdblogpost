@@ -28,15 +28,15 @@ At any given stage when any condition fails the fallback option is to ask the us
 RAIDframe setup with higher capacity drives. This time too, the fallback option worked.
 
 There are some global functions used in conditions inside `setroot`, `rootspec`, `bootspec`, etc. These functions are either set through the config file or through other machine-dependent kernel functions `findroot` etc. We need to modify them in our test cases and also need to stub kernel functions used by `setroot` and other functions. These test cases will 
-eventually be ported to use `Vnd`. We check for global variables and if a local variable is to be checked we initialize it. 
+eventually be ported to use [vnd](https://man.netbsd.org/vnd.4). We check for global variables and if a local variable is to be checked we initialize it. 
 Since `root_device` can also be a network device, this has to be defined in the config file. We also test the `tftproot_dhcpboot` function. This function can also set `root_device`.
 
 Devices are represented by the `device_t` struct and it is populated by the kernel, we mock this behavior through the `create_device` function and use this in the test programs.
 User input is handled by stubbing the `cngetsn` function. Global variables and arguments are set to test values in the body of the test case and the function being tested is called.
-The Test file is divided into 3 parts 1) setroot_root 2) setroot_ask 3) tftproot_dhcp. in kern_subr.c file `setroot()` calls these functions but here we test them independently
+The test file is divided into 3 parts 1) `setroot_root` 2) `setroot_ask` 3) `tftproot_dhcp`. In `kern_subr.c` file `setroot()` calls these functions but here we test them independently.
 
 ## Conclusion 
 
-Worked on enhancing NetBSD's ATF to test the root device and file system selection process, testing the setroot function and its dependencies. These tests shall improve coverage 
-of ATF to setroot function and in general, to root device selection, addressing challenges like RAIDframe issues with high-capacity drives and reducing reliance on manual intervention. 
-In the future ,contributors can rely on these tests for kern_subr.c's functionality  
+I have worked on enhancing NetBSD's ATF to test the root device and file system selection process, testing the `setroot` function and its dependencies. These tests shall improve coverage 
+of ATF to `setroot` function and in general, to root device selection, addressing challenges like RAIDframe issues with high-capacity drives and reducing reliance on manual intervention. 
+In the future, contributors can rely on these tests for `kern_subr.c`'s functionality  
