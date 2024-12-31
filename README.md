@@ -5,14 +5,7 @@ This area of the kernel is not very well documented and program flow has to
 be determined by reading the code.
 This is not very feasible.
 But the code does work and has been working for 30+ years.
-XXXbad ambiguous what "it" refers to here.  Maybe delete the last 2 sentences.
-
-However, Christoph Badura experienced a bug with RAIDframe autodetecting the root device on GPT-partitioned drives and falling back to asking the
-user for the device and partition manually.
-Doing that is tiresome and needs manual intervention.
-XXXbad well, actually the machine in questions was to be moved to a data center and therefore manual intervention was not an option. I suggest deleting the last sentence.
-
-This project shall extend the test coverage to root device selection, which will help in the future development of this kernel area.
+XXXbad ambiguous what "it" refered to here.  Maybe delete the last 2 sentences.
 
 I would also like to tell you about my early interactions with the project,
 let me start with project findings.
