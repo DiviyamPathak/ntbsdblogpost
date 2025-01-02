@@ -3,9 +3,6 @@ This summer I worked on NetBSD's kernel test framework to cover root device
 discovery and root file system selection.
 This area of the kernel is not very well documented and program flow has to
 be determined by reading the code.
-This is not very feasible.
-But the code does work and has been working for 30+ years.
-XXXbad ambiguous what "it" refered to here.  Maybe delete the last 2 sentences.
 
 I would also like to tell you about my early interactions with the project,
 let me start with project findings.
@@ -18,10 +15,7 @@ i3 days as every new Windows version used to bring new changes and features,
 from Windows XP to Vista to 8.1 and then to 10 (cosmetic only) but was very
 heavy on my PC's memory usage that was upwards of 60% leaving very little
 room for applications and games.
-XXXbad i assume "exotic applications" includes web browsers.  Chrome and Firefox easily consum 4 GB of memory in my experience.
 
-Unix-like OSes which didn't require bleeding-edge hardware.
-XXXbad this sentence doesn't connect to the others?  where you looking for OSes with lower demands on hardware?  did you notice that Unix-like OSes are less demanding off hardware?
 My Intel i3 would be enough for it.
 This experience made me decide I wanted my project to be in the operating system space.
 I ventured into all OS projects on the Google Summer of Code website.
